@@ -1,0 +1,25 @@
+---
+layout: home
+---
+
+<header class="wrap clearfix cf">
+  <div class="masthead cf ">
+    <span class="hero">Sammenstilling</span>
+    <h1>We are a collective of <span>Animators</span>, <span>Programmers</span> and <span>Creatives</span> hellbent on delivering content that appeals to your <span>customers</span>.</h1>
+  </div>
+</header>
+
+<div id="content" class="invert projects cf">
+  <div class="wrap clearfix cf">
+
+    {% for project in site.case-studies limit:3 %}
+      <h2 href="{{ project.url }}">{{ project.title }}</h2>
+
+      <div class="video">
+        {{ project.video.iframe }}
+      </div>
+
+    {% endfor %}
+
+  </div>
+</div>

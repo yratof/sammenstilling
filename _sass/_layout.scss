@@ -1,0 +1,40 @@
+
+/**
+ * Wrapper
+ */
+.wrap, .w, .wrapper {
+    max-width: 92%;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    @extend %clearfix;
+
+    @media only screen and #{$laptop}{
+      max-width: 76rem;
+      width: 93%;
+    }
+}
+
+.single{
+  img{
+    margin-bottom: 1.5rem;
+
+    &.size-full{
+      max-width: 120%;
+      width: 120%;
+      position: relative;
+      left: -10%;
+    }
+  }
+}
+
+.ma{
+	margin-right: auto;
+	margin-left: auto;
+}
+
+hr {
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    margin: 2rem auto;
+}

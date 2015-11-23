@@ -1,0 +1,23 @@
+# Site settings
+title: Sammenstilling
+email: eyeversuseye@gmail.com
+description: Data-driven animation in Norway
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://yratof.github.io/studio" # the base hostname & protocol for your site
+permalink: /:year/:month/:title/
+twitter_username: yratof
+github_username:  yratof
+timezone: Europe/Oslo
+
+collections:
+  case-studies:
+    output: true
+
+# Extra things
+exclude: ['node_modules']
+
+# Build settings
+markdown: kramdown
+
+gems:
+  - jekyll-sitemap

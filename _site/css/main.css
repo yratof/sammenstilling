@@ -1,0 +1,734 @@
+/******************************************************************
+Stylesheet: Mixins & Constants Stylesheet
+******************************************************************/
+* {
+  box-sizing: border-box; }
+
+/*
+	These are the breakpoints for your website. These can be customised to your design. The
+	more that I think about it, the more I'm starting to realise that these breakpoints
+	need to change for the design, and not for the sizes they are. They're just a guide.
+	In fact, I insist, you MUST change these.
+*/
+/* This mixins file was starting to get way too big. So I've cut it down into fragments. */
+/*********************
+CLEARFIXIN'
+*********************/
+.clearfix, .cf {
+  zoom: 1; }
+  .clearfix:before, .clearfix:after, .cf:before, .cf:after {
+    content: "";
+    display: table; }
+  .clearfix:after, .cf:after {
+    clear: both; }
+
+/* 
+	Blend Modes
+	===========
+	http://caniuse.com/#feat=css-backgroundblendmode
+	@usage:  
+		@include blended("url", $colour);
+		@include blended("url", $grad: $love);
+
+*/
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdo it.
+*********************/
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+/*********************
+Placeholder Mixin
+Simply use this in a class somewhere to add placeholder styles.
+	@include placeholder {
+		colour: $brand-colour;
+	}
+*********************/
+.image-replacement {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden; }
+
+.screen-reader-text {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute; }
+
+.relative {
+  position: relative; }
+
+.vertical {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); }
+  .vertical.horizontal {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto; }
+
+/* this is the padding */
+.padding-1 {
+  padding-top: 1 * 16pxpx;
+  padding-bottom: 1 * 16pxpx;
+  padding-top: 1rem;
+  padding-bottom: 1rem; }
+  .padding-1-top {
+    padding-top: 1 * 16pxpx;
+    padding-top: 1rem; }
+  .padding-1-bottom {
+    padding-bottom: 1 * 16pxpx;
+    padding-bottom: 1rem; }
+
+.padding-2 {
+  padding-top: 2 * 16pxpx;
+  padding-bottom: 2 * 16pxpx;
+  padding-top: 2rem;
+  padding-bottom: 2rem; }
+  .padding-2-top {
+    padding-top: 2 * 16pxpx;
+    padding-top: 2rem; }
+  .padding-2-bottom {
+    padding-bottom: 2 * 16pxpx;
+    padding-bottom: 2rem; }
+
+.padding-3 {
+  padding-top: 3 * 16pxpx;
+  padding-bottom: 3 * 16pxpx;
+  padding-top: 3rem;
+  padding-bottom: 3rem; }
+  .padding-3-top {
+    padding-top: 3 * 16pxpx;
+    padding-top: 3rem; }
+  .padding-3-bottom {
+    padding-bottom: 3 * 16pxpx;
+    padding-bottom: 3rem; }
+
+.padding-4 {
+  padding-top: 4 * 16pxpx;
+  padding-bottom: 4 * 16pxpx;
+  padding-top: 4rem;
+  padding-bottom: 4rem; }
+  .padding-4-top {
+    padding-top: 4 * 16pxpx;
+    padding-top: 4rem; }
+  .padding-4-bottom {
+    padding-bottom: 4 * 16pxpx;
+    padding-bottom: 4rem; }
+
+.no-margin-top {
+  margin-top: 0; }
+
+.no-margin-bottom {
+  margin-bottom: 0; }
+
+.no-margin-left {
+  margin-left: 0; }
+
+.no-margin-right {
+  margin-right: 0; }
+
+/************************************
+		B U T T O N   C O L O U R S
+	This mixin gives you a button in any
+	colour that you want. It then decides
+	if the background is dark or light and
+	gives you white or dark grey text colour.
+*************************************/
+/* 
+	Counting Elements can be fun.
+	http://www.sitepoint.com/using-sass-quantity-queries/
+
+	// If there are exactly 5 elements:
+	@include count-is(5){
+		// Say something beautiful
+	}
+	
+	// If there are less than 3 elements:
+	@include count-is-less-than(3){
+		// Say something beautiful
+	}
+
+	// If there are 3 or more elements:
+	@include count-is-more-than(3){
+		// Say something beautiful
+	}
+
+*/
+/*
+	Grid Mixin
+	----------
+	
+	We use these for making grids work easier.
+	@include GridAssets(2, first); = Two columns, and it's the first column
+*/
+/************************
+ I N L I N E - B L O C K
+~ Gap Removal Technique ~
+
+@usage: @include ib();
+************************/
+/*********************
+C O N T E N T   C H O R E O G R A P H Y
+Something that will reorder your content if used correctly.
+And on the right browser, of course.
+**********************/
+/* This is quite an experiment with font sizes.
+ Basically, i'm using a modualr scale for the type. */
+/* 	This mixin will help you nest mediaqueries easier.
+	@Usage:
+		@include wider-than(mobile) 	{ width: 55%; 	}
+		@include wider-than(phablet) 	{ width: 65%; 	}
+		@include wider-than(tablet) 	{ width: 75%;	}
+
+	Uses the breakpoint map defined inside _breakpoints.scss
+*/
+/* Font Smoothing - http://maximilianhoffmann.com/posts/better-font-rendering-on-osx */
+/*********************
+Background colour based on brightness
+*********************/
+.bg-grey {
+  background-color: #fafafa; }
+
+.bg-white {
+  background-color: #fff; }
+
+.red, a.red, .blue, a.blue, .green, a.green {
+  text-decoration: underline; }
+
+.red {
+  color: #9c00ff; }
+
+a.red {
+  color: #9c00ff; }
+  a.red:hover, a.red:active, a.red:focus {
+    color: #7d00cc; }
+
+.blue {
+  color: #0000ff; }
+
+a.blue {
+  color: #0000ff; }
+  a.blue:hover, a.blue:active, a.blue:focus {
+    color: #0000cc; }
+
+.green {
+  color: #b4d555; }
+
+a.green {
+  color: #b4d555; }
+  a.green:hover, a.green:active, a.green:focus {
+    color: #a3cc2b; }
+
+body {
+  font-family: "Work Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: greyscale;
+  -moz-font-feature-settings: "liga" 1, "dlig" 1, "salt" 1, "ss02" 1;
+  -ms-font-feature-settings: "liga" 1, "dlig" 1, "salt" 1, "ss02" 1;
+  -o-font-feature-settings: "liga" 1, "dlig" 1, "salt" 1, "ss02" 1;
+  -webkit-font-feature-settings: "liga" 1, "dlig" 1, "salt" 1, "ss02" 1;
+  font-feature-settings: "liga" 1, "dlig" 1, "salt" 1, "ss02" 1; }
+
+p {
+  font-size: 1.5rem;
+  font-family: "Work Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.5; }
+
+.hero {
+  display: block;
+  padding-top: 6.144rem;
+  font-size: 2.31604rem; }
+  @media only screen and (min-width: 30.0625rem) {
+    .hero {
+      padding-top: 7.68rem; } }
+  @media only screen and (min-width: 48rem) {
+    .hero {
+      padding-top: 9.6rem; } }
+  @media only screen and (min-width: 64.0625rem) {
+    .hero {
+      padding-top: 12rem; } }
+  @media only screen and (min-width: 77.5rem) {
+    .hero {
+      padding-top: 15rem; } }
+  @media only screen and (min-width: 30.0625rem) {
+    .hero {
+      font-size: 3.08728rem; } }
+  @media only screen and (min-width: 48rem) {
+    .hero {
+      font-size: 4.11534rem; } }
+  @media only screen and (min-width: 64.0625rem) {
+    .hero {
+      font-size: 5.48575rem; } }
+  @media only screen and (min-width: 77.5rem) {
+    .hero {
+      font-size: 7.3125rem; } }
+
+h1, h2, h3, h4, h5, h6 {
+  text-rendering: optimizelegibility;
+  color: #000;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.25;
+  letter-spacing: -0.05rem; }
+  h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
+    color: #0000ff;
+    text-shadow: 0.1rem 0 white, 0.2rem 0 white, -0.1rem 0 white, -0.2rem 0 white;
+    background-image: linear-gradient(to bottom, transparent 50%, currentColor 50%);
+    background-repeat: repeat-x;
+    background-size: 2px 10%;
+    background-position: 0 92%; }
+    h1 span:hover, h1 span:active, h1 span:focus, h2 span:hover, h2 span:active, h2 span:focus, h3 span:hover, h3 span:active, h3 span:focus, h4 span:hover, h4 span:active, h4 span:focus, h5 span:hover, h5 span:active, h5 span:focus, h6 span:hover, h6 span:active, h6 span:focus {
+      text-decoration: none;
+      background-image: linear-gradient(to bottom, transparent 50%, currentColor 50%); }
+  .invert h1, .invert h2, .invert h3, .invert h4, .invert h5, .invert h6 {
+    color: white; }
+    .invert h1 span, .invert h2 span, .invert h3 span, .invert h4 span, .invert h5 span, .invert h6 span {
+      color: white;
+      text-shadow: 0.1rem 0 #0000ff, 0.2rem 0 #0000ff, -0.1rem 0 #0000ff, -0.2rem 0 #0000ff;
+      background-image: linear-gradient(to bottom, transparent 50%, currentColor 50%);
+      background-repeat: repeat-x;
+      background-size: 2px 10%;
+      background-position: 0 92%; }
+      .invert h1 span:hover, .invert h1 span:active, .invert h1 span:focus, .invert h2 span:hover, .invert h2 span:active, .invert h2 span:focus, .invert h3 span:hover, .invert h3 span:active, .invert h3 span:focus, .invert h4 span:hover, .invert h4 span:active, .invert h4 span:focus, .invert h5 span:hover, .invert h5 span:active, .invert h5 span:focus, .invert h6 span:hover, .invert h6 span:active, .invert h6 span:focus {
+        text-decoration: none;
+        background-image: linear-gradient(to bottom, transparent 50%, currentColor 50%); }
+
+h1, .h1 {
+  font-size: 1.28rem; }
+  @media only screen and (min-width: 30.0625rem) {
+    h1, .h1 {
+      font-size: 1.6rem; } }
+  @media only screen and (min-width: 48rem) {
+    h1, .h1 {
+      font-size: 2rem; } }
+  @media only screen and (min-width: 64.0625rem) {
+    h1, .h1 {
+      font-size: 2.5rem; } }
+  @media only screen and (min-width: 77.5rem) {
+    h1, .h1 {
+      font-size: 3.125rem; } }
+
+h2, .h2 {
+  font-size: 0.768rem; }
+  @media only screen and (min-width: 30.0625rem) {
+    h2, .h2 {
+      font-size: 0.96rem; } }
+  @media only screen and (min-width: 48rem) {
+    h2, .h2 {
+      font-size: 1.2rem; } }
+  @media only screen and (min-width: 64.0625rem) {
+    h2, .h2 {
+      font-size: 1.5rem; } }
+  @media only screen and (min-width: 77.5rem) {
+    h2, .h2 {
+      font-size: 1.875rem; } }
+
+h3, .h3 {
+  font-size: 0.6144rem; }
+  @media only screen and (min-width: 30.0625rem) {
+    h3, .h3 {
+      font-size: 0.768rem; } }
+  @media only screen and (min-width: 48rem) {
+    h3, .h3 {
+      font-size: 0.96rem; } }
+  @media only screen and (min-width: 64.0625rem) {
+    h3, .h3 {
+      font-size: 1.2rem; } }
+  @media only screen and (min-width: 77.5rem) {
+    h3, .h3 {
+      font-size: 1.5rem; } }
+
+h4, .h4 {
+  font-size: 0.4608rem; }
+  @media only screen and (min-width: 30.0625rem) {
+    h4, .h4 {
+      font-size: 0.576rem; } }
+  @media only screen and (min-width: 48rem) {
+    h4, .h4 {
+      font-size: 0.72rem; } }
+  @media only screen and (min-width: 64.0625rem) {
+    h4, .h4 {
+      font-size: 0.9rem; } }
+  @media only screen and (min-width: 77.5rem) {
+    h4, .h4 {
+      font-size: 1.125rem; } }
+
+h5, .h5 {
+  font-size: 0.4096rem; }
+  @media only screen and (min-width: 30.0625rem) {
+    h5, .h5 {
+      font-size: 0.512rem; } }
+  @media only screen and (min-width: 48rem) {
+    h5, .h5 {
+      font-size: 0.64rem; } }
+  @media only screen and (min-width: 64.0625rem) {
+    h5, .h5 {
+      font-size: 0.8rem; } }
+  @media only screen and (min-width: 77.5rem) {
+    h5, .h5 {
+      font-size: 1rem; } }
+
+h6, .h6 {
+  font-size: 0.34816rem; }
+  @media only screen and (min-width: 30.0625rem) {
+    h6, .h6 {
+      font-size: 0.4352rem; } }
+  @media only screen and (min-width: 48rem) {
+    h6, .h6 {
+      font-size: 0.544rem; } }
+  @media only screen and (min-width: 64.0625rem) {
+    h6, .h6 {
+      font-size: 0.68rem; } }
+  @media only screen and (min-width: 77.5rem) {
+    h6, .h6 {
+      font-size: 0.85rem; } }
+
+.invert {
+  background-color: #0000ff;
+  color: white; }
+
+.projects {
+  text-align: center;
+  margin-top: 1.2288rem;
+  padding-top: 1.2288rem;
+  padding-bottom: 1.2288rem; }
+  @media only screen and (min-width: 30.0625rem) {
+    .projects {
+      margin-top: 1.536rem; } }
+  @media only screen and (min-width: 48rem) {
+    .projects {
+      margin-top: 1.92rem; } }
+  @media only screen and (min-width: 64.0625rem) {
+    .projects {
+      margin-top: 2.4rem; } }
+  @media only screen and (min-width: 77.5rem) {
+    .projects {
+      margin-top: 3rem; } }
+  @media only screen and (min-width: 30.0625rem) {
+    .projects {
+      padding-top: 1.536rem; } }
+  @media only screen and (min-width: 48rem) {
+    .projects {
+      padding-top: 1.92rem; } }
+  @media only screen and (min-width: 64.0625rem) {
+    .projects {
+      padding-top: 2.4rem; } }
+  @media only screen and (min-width: 77.5rem) {
+    .projects {
+      padding-top: 3rem; } }
+  @media only screen and (min-width: 30.0625rem) {
+    .projects {
+      padding-bottom: 1.536rem; } }
+  @media only screen and (min-width: 48rem) {
+    .projects {
+      padding-bottom: 1.92rem; } }
+  @media only screen and (min-width: 64.0625rem) {
+    .projects {
+      padding-bottom: 2.4rem; } }
+  @media only screen and (min-width: 77.5rem) {
+    .projects {
+      padding-bottom: 3rem; } }
+  .projects h2 {
+    margin-bottom: 1.2288rem; }
+    @media only screen and (min-width: 30.0625rem) {
+      .projects h2 {
+        margin-bottom: 1.536rem; } }
+    @media only screen and (min-width: 48rem) {
+      .projects h2 {
+        margin-bottom: 1.92rem; } }
+    @media only screen and (min-width: 64.0625rem) {
+      .projects h2 {
+        margin-bottom: 2.4rem; } }
+    @media only screen and (min-width: 77.5rem) {
+      .projects h2 {
+        margin-bottom: 3rem; } }
+
+/**
+ * Reset some basic elements
+ */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+  margin: 0;
+  padding: 0; }
+
+/**
+ * Basic styling
+ */
+body {
+  font-family: "Work Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #000;
+  background-color: #fff;
+  -webkit-text-size-adjust: 100%; }
+  @media only screen and (min-width: 103.75rem) {
+    body {
+      font-size: 140%; } }
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+.highlight {
+  margin-bottom: 1rem; }
+
+/**
+ * Images
+ */
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle; }
+
+/**
+ * Figures
+ */
+figure > img {
+  display: block; }
+
+figcaption {
+  font-size: 14px; }
+
+/**
+ * Lists
+ */
+ul, ol {
+  margin-left: 2rem; }
+
+li > ul,
+li > ol {
+  margin-bottom: 0; }
+
+/**
+ * Links
+ */
+a {
+  color: #0000ff;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+
+/**
+ * Blockquotes
+ */
+blockquote {
+  color: #aaa;
+  border-left: 4px solid #fafafa;
+  padding-left: 1rem;
+  font-size: 18px;
+  letter-spacing: -1px;
+  font-style: italic; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+/**
+ * Code formatting
+ */
+pre,
+code {
+  margin: 0 2px;
+  padding: 0 5px;
+  font-size: 1rem;
+  white-space: pre-wrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+  font-family: Inconsolata, monospace;
+  hyphens: none; }
+
+pre {
+  padding: 8px 12px;
+  overflow-x: scroll;
+  margin-bottom: 2rem; }
+  pre > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0; }
+
+/**
+ * Clearfix
+ */
+.wrap:after, .w:after, .wrapper:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/**
+ * Wrapper
+ */
+.wrap, .w, .wrapper {
+  max-width: 92%;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto; }
+  @media only screen and (min-width: 64.0625rem) {
+    .wrap, .w, .wrapper {
+      max-width: 76rem;
+      width: 93%; } }
+
+.single img {
+  margin-bottom: 1.5rem; }
+  .single img.size-full {
+    max-width: 120%;
+    width: 120%;
+    position: relative;
+    left: -10%; }
+
+.ma {
+  margin-right: auto;
+  margin-left: auto; }
+
+hr {
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  margin: 2rem auto; }
+
+/**
+ * Syntax highlighting styles
+ */
+.highlight {
+  background: #fff; }
+  .highlight .c {
+    color: #998;
+    font-style: italic; }
+  .highlight .err {
+    color: #a61717;
+    background-color: #e3d2d2; }
+  .highlight .k {
+    font-weight: bold; }
+  .highlight .o {
+    font-weight: bold; }
+  .highlight .cm {
+    color: #998;
+    font-style: italic; }
+  .highlight .cp {
+    color: #999;
+    font-weight: bold; }
+  .highlight .c1 {
+    color: #998;
+    font-style: italic; }
+  .highlight .cs {
+    color: #999;
+    font-weight: bold;
+    font-style: italic; }
+  .highlight .gd {
+    color: #000;
+    background-color: #fdd; }
+  .highlight .gd .x {
+    color: #000;
+    background-color: #faa; }
+  .highlight .ge {
+    font-style: italic; }
+  .highlight .gr {
+    color: #a00; }
+  .highlight .gh {
+    color: #999; }
+  .highlight .gi {
+    color: #000;
+    background-color: #dfd; }
+  .highlight .gi .x {
+    color: #000;
+    background-color: #afa; }
+  .highlight .go {
+    color: #888; }
+  .highlight .gp {
+    color: #555; }
+  .highlight .gs {
+    font-weight: bold; }
+  .highlight .gu {
+    color: #aaa; }
+  .highlight .gt {
+    color: #a00; }
+  .highlight .kc {
+    font-weight: bold; }
+  .highlight .kd {
+    font-weight: bold; }
+  .highlight .kp {
+    font-weight: bold; }
+  .highlight .kr {
+    font-weight: bold; }
+  .highlight .kt {
+    color: #458;
+    font-weight: bold; }
+  .highlight .m {
+    color: #099; }
+  .highlight .s {
+    color: #d14; }
+  .highlight .na {
+    color: #008080; }
+  .highlight .nb {
+    color: #0086B3; }
+  .highlight .nc {
+    color: #458;
+    font-weight: bold; }
+  .highlight .no {
+    color: #008080; }
+  .highlight .ni {
+    color: #800080; }
+  .highlight .ne {
+    color: #900;
+    font-weight: bold; }
+  .highlight .nf {
+    color: #900;
+    font-weight: bold; }
+  .highlight .nn {
+    color: #555; }
+  .highlight .nt {
+    color: #000080; }
+  .highlight .nv {
+    color: #008080; }
+  .highlight .ow {
+    font-weight: bold; }
+  .highlight .w {
+    color: #bbb; }
+  .highlight .mf {
+    color: #099; }
+  .highlight .mh {
+    color: #099; }
+  .highlight .mi {
+    color: #099; }
+  .highlight .mo {
+    color: #099; }
+  .highlight .sb {
+    color: #d14; }
+  .highlight .sc {
+    color: #d14; }
+  .highlight .sd {
+    color: #d14; }
+  .highlight .s2 {
+    color: #d14; }
+  .highlight .se {
+    color: #d14; }
+  .highlight .sh {
+    color: #d14; }
+  .highlight .si {
+    color: #d14; }
+  .highlight .sx {
+    color: #d14; }
+  .highlight .sr {
+    color: #009926; }
+  .highlight .s1 {
+    color: #d14; }
+  .highlight .ss {
+    color: #990073; }
+  .highlight .bp {
+    color: #999; }
+  .highlight .vc {
+    color: #008080; }
+  .highlight .vg {
+    color: #008080; }
+  .highlight .vi {
+    color: #008080; }
+  .highlight .il {
+    color: #099; }

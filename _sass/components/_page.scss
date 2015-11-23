@@ -1,0 +1,15 @@
+.invert{
+  background-color: $brand-colour;
+  color: white;
+}
+
+.projects{
+  text-align: center;
+  @include modular-element(margin-top, 3rem);
+  @include modular-element(padding-top, 3rem);
+  @include modular-element(padding-bottom, 3rem);
+
+  h2{
+    @include modular-element(margin-bottom, 3rem);
+  }
+}
