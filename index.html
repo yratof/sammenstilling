@@ -10,16 +10,17 @@ layout: home
 </header>
 
 <div id="content" class="invert projects cf">
-  <div class="wrap clearfix cf">
+  {% for project in site.case-studies limit:3 %}
+    <h2>{{ project.title }}</h2>
 
-    {% for project in site.case-studies limit:3 %}
-      <h2 href="{{ project.url }}">{{ project.title }}</h2>
+    <div class="flowplayer no-background no-volume no-time no-toggle">
+      <video autoplay loop data-native_fullscreen="true">
+        <source type="video/webm" src="{{ site.baseurl }}{{ project.video.webm }}">
+        <source type="video/mp4"  src="{{ site.baseurl }}{{ project.video.mp4 }}">
+      </video>
+    </div>
 
-      <div class="c-vd-o">
-        {{ project.video.iframe }}
-      </div>
+    <a class="project--link" href="{{ project.url }}"></a>
 
-    {% endfor %}
-
-  </div>
+  {% endfor %}
 </div>
