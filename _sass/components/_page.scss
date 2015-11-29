@@ -1,4 +1,19 @@
-.invert{
+.masthead{
+  @include modular-element(margin-bottom, 3rem);
+}
+
+.logo{
+  display: inline-block;
+  @include modular-element(padding, 1rem);
+  @include modular(2rem, $minor-second);
+
+  background-color: white;
+  color: black;
+
+  width: 100%;
+}
+
+.invert, .post{
   background-color: $brand-colour;
   color: white;
 }
@@ -6,13 +21,25 @@
 .projects{
   position: relative;
   text-align: center;
-  @include modular-element(margin-top, 3rem);
   @include modular-element(padding-top, 3rem);
   @include modular-element(padding-bottom, 3rem);
 
   h2{
     @include modular-element(margin-bottom, 3rem);
   }
+
+  .post-content{
+    @include modular-element(max-width, 57rem);
+  }
+
+  p{
+    @include modular(1.75rem, $minor-second);
+  }
+}
+
+.case-title{
+  @include modular-element(padding, 1.5rem);
+  @include modular(3.125rem, $minor-second);
 }
 
 video {

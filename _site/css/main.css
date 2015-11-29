@@ -390,28 +390,62 @@ h6, .h6 {
     h6, .h6 {
       font-size: 0.85rem; } }
 
-.invert {
+.masthead {
+  margin-bottom: 1.2288rem; }
+  @media only screen and (min-width: 30.0625rem) {
+    .masthead {
+      margin-bottom: 1.536rem; } }
+  @media only screen and (min-width: 48rem) {
+    .masthead {
+      margin-bottom: 1.92rem; } }
+  @media only screen and (min-width: 64.0625rem) {
+    .masthead {
+      margin-bottom: 2.4rem; } }
+  @media only screen and (min-width: 77.5rem) {
+    .masthead {
+      margin-bottom: 3rem; } }
+
+.logo {
+  display: inline-block;
+  padding: 0.4096rem;
+  font-size: 1.54302rem;
+  background-color: white;
+  color: black;
+  width: 100%; }
+  @media only screen and (min-width: 30.0625rem) {
+    .logo {
+      padding: 0.512rem; } }
+  @media only screen and (min-width: 48rem) {
+    .logo {
+      padding: 0.64rem; } }
+  @media only screen and (min-width: 64.0625rem) {
+    .logo {
+      padding: 0.8rem; } }
+  @media only screen and (min-width: 77.5rem) {
+    .logo {
+      padding: 1rem; } }
+  @media only screen and (min-width: 30.0625rem) {
+    .logo {
+      font-size: 1.64641rem; } }
+  @media only screen and (min-width: 48rem) {
+    .logo {
+      font-size: 1.75671rem; } }
+  @media only screen and (min-width: 64.0625rem) {
+    .logo {
+      font-size: 1.87441rem; } }
+  @media only screen and (min-width: 77.5rem) {
+    .logo {
+      font-size: 2rem; } }
+
+.invert, .post {
   background-color: #0500F6;
   color: white; }
 
 .projects {
   position: relative;
   text-align: center;
-  margin-top: 1.2288rem;
   padding-top: 1.2288rem;
   padding-bottom: 1.2288rem; }
-  @media only screen and (min-width: 30.0625rem) {
-    .projects {
-      margin-top: 1.536rem; } }
-  @media only screen and (min-width: 48rem) {
-    .projects {
-      margin-top: 1.92rem; } }
-  @media only screen and (min-width: 64.0625rem) {
-    .projects {
-      margin-top: 2.4rem; } }
-  @media only screen and (min-width: 77.5rem) {
-    .projects {
-      margin-top: 3rem; } }
   @media only screen and (min-width: 30.0625rem) {
     .projects {
       padding-top: 1.536rem; } }
@@ -450,6 +484,62 @@ h6, .h6 {
     @media only screen and (min-width: 77.5rem) {
       .projects h2 {
         margin-bottom: 3rem; } }
+  .projects .post-content {
+    max-width: 23.3472rem; }
+    @media only screen and (min-width: 30.0625rem) {
+      .projects .post-content {
+        max-width: 29.184rem; } }
+    @media only screen and (min-width: 48rem) {
+      .projects .post-content {
+        max-width: 36.48rem; } }
+    @media only screen and (min-width: 64.0625rem) {
+      .projects .post-content {
+        max-width: 45.6rem; } }
+    @media only screen and (min-width: 77.5rem) {
+      .projects .post-content {
+        max-width: 57rem; } }
+  .projects p {
+    font-size: 1.35014rem; }
+    @media only screen and (min-width: 30.0625rem) {
+      .projects p {
+        font-size: 1.4406rem; } }
+    @media only screen and (min-width: 48rem) {
+      .projects p {
+        font-size: 1.53713rem; } }
+    @media only screen and (min-width: 64.0625rem) {
+      .projects p {
+        font-size: 1.64011rem; } }
+    @media only screen and (min-width: 77.5rem) {
+      .projects p {
+        font-size: 1.75rem; } }
+
+.case-title {
+  padding: 0.6144rem;
+  font-size: 2.41097rem; }
+  @media only screen and (min-width: 30.0625rem) {
+    .case-title {
+      padding: 0.768rem; } }
+  @media only screen and (min-width: 48rem) {
+    .case-title {
+      padding: 0.96rem; } }
+  @media only screen and (min-width: 64.0625rem) {
+    .case-title {
+      padding: 1.2rem; } }
+  @media only screen and (min-width: 77.5rem) {
+    .case-title {
+      padding: 1.5rem; } }
+  @media only screen and (min-width: 30.0625rem) {
+    .case-title {
+      font-size: 2.57251rem; } }
+  @media only screen and (min-width: 48rem) {
+    .case-title {
+      font-size: 2.74487rem; } }
+  @media only screen and (min-width: 64.0625rem) {
+    .case-title {
+      font-size: 2.92877rem; } }
+  @media only screen and (min-width: 77.5rem) {
+    .case-title {
+      font-size: 3.125rem; } }
 
 video {
   max-width: 100%;
