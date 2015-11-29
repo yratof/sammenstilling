@@ -4,6 +4,7 @@
 }
 
 .projects{
+  position: relative;
   text-align: center;
   @include modular-element(margin-top, 3rem);
   @include modular-element(padding-top, 3rem);
@@ -17,7 +18,26 @@
 video {
   max-width: 100%;
   height: auto;
+  pointer-events: none;
 }
+
+// Flowplayer edits
+.fp-embed,
+.fp-fullscreen,
+.fp-controls{
+  display: none !important;
+}
+
+.project--link{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+}
+
+
 iframe,
 embed,
 object {
