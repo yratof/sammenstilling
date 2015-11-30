@@ -2,8 +2,8 @@
 title: Sammenstilling
 email: eyeversuseye@gmail.com
 description: Data-driven animation in Norway
-baseurl: "/sammenstilling" # the subpath of your site, e.g. /blog/
-url: "http://yratof.github.io" # the base hostname & protocol for your site
+baseurl: "/sammenstilling/" # the subpath of your site, e.g. /blog/
+url: "http://yratof.github.io/" # the base hostname & protocol for your site
 permalink: /:year/:month/:title/
 twitter_username: yratof
 github_username:  yratof
