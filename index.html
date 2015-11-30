@@ -20,7 +20,7 @@ layout: home
       </video>
     </div>
 
-    <a class="project--link" href="{{ project.url }}"></a>
+    <a class="project--link" href="{{ project.url || prepend:site.baseurl }}"></a>
 
   {% endfor %}
 </div>
