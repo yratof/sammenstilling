@@ -5,7 +5,7 @@ module.exports = function (grunt) {
     // Show elapsed time after tasks run to visualize performance
     require('time-grunt')(grunt);
     // Load all Grunt tasks that are listed in package.json automagically
-    require('load-grunt-tasks')(grunt);
+    require('jit-grunt')(grunt);
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -42,7 +42,6 @@ module.exports = function (grunt) {
                 tasks: [
                     'sass',
                     'postcss:dist',
-                    'combine_mq',
                 ]
             }
         },
@@ -72,7 +71,7 @@ module.exports = function (grunt) {
             options: {
                 map: false,
                 processors: [
-                    require('autoprefixer-core')({
+                    require('autoprefixer')({
                         browsers: ['> 20%', 'last 10 versions', 'Firefox > 20']
                     })
                 ],
@@ -81,18 +80,6 @@ module.exports = function (grunt) {
             dist: {
                 src: '_site/css/*.css'
             }
-        },
-
-        // Combine MQ's, but lose critical css
-        combine_mq: {
-          target: {
-            files: {
-              '_site/css/main.css': ['_site/css/main.css']
-            },
-            options: {
-              beautify: false
-            }
-          }
         },
 
         // run tasks in parallel
@@ -123,7 +110,6 @@ module.exports = function (grunt) {
     grunt.registerTask(
         'default',
         'build',
-        'combine_mq', // Combine MQ's
         'postcss:dist', // Post Process with Auto-Prefix
         'newer:imagemin:dynamic', // Compress all images
         'concurrent:serve'

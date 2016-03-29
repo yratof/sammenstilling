@@ -4,7 +4,8 @@
 
 .logo{
   display: inline-block;
-  @include modular-element(padding, 1rem);
+  @include modular-element(padding-top, 1rem);
+  @include modular-element(padding-bottom, 1rem);
   @include modular(2rem, $minor-second);
 
   background-color: white;
@@ -21,11 +22,16 @@
 .projects{
   position: relative;
   text-align: center;
-  @include modular-element(padding-top, 3rem);
-  @include modular-element(padding-bottom, 3rem);
 
   h2{
     @include modular-element(margin-bottom, 3rem);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    @include modular-element( padding, 2rem );
+
   }
 
   .post-content{
@@ -38,7 +44,8 @@
 }
 
 .case-title{
-  @include modular-element(padding, 1.5rem);
+  @include modular-element(padding-top, 1.5rem);
+  @include modular-element(padding-bottom, 1.5rem);
   @include modular(3.125rem, $minor-second);
 }
 
